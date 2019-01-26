@@ -32,7 +32,9 @@ public class WalkIKAnimation : MonoBehaviour
 
     private bool IsFStaing;
     private bool IsBStaing;
-    [Space]
+    [Header("AIRANIM")]
+    public float HorizontalLegsTrimIntensity;
+    public float HorizontalLegsTrimRange;
     public Vector3 FLegOnAirPosition;
     public Vector3 BLegOnAirPosition;
 
@@ -70,9 +72,9 @@ public class WalkIKAnimation : MonoBehaviour
                 StopCoroutine(_legsReturningCoroutine);
                 _isFrontLegReturningNow = false;
             }
-                
-            FLeg.transform.position = Vector3.Lerp(FLeg.transform.position, flegNormalPos + FLegOnAirPosition, FLegLerpSpeed);
-            BLeg.transform.position = Vector3.Lerp(BLeg.transform.position, blegNormalPos + BLegOnAirPosition, BLegLerpSpeed);
+            Vector3 xTrimPos = new Vector3(Mathf.Sin(_tempTime * HorizontalLegsTrimIntensity) * HorizontalLegsTrimRange,0,0);
+            FLeg.transform.position = Vector3.Lerp(FLeg.transform.position, flegNormalPos + FLegOnAirPosition + xTrimPos, FLegLerpSpeed);
+            BLeg.transform.position = Vector3.Lerp(BLeg.transform.position, blegNormalPos + BLegOnAirPosition + xTrimPos, BLegLerpSpeed);
         }
         else
         {
@@ -127,8 +129,10 @@ public class WalkIKAnimation : MonoBehaviour
 
     public void SwitchFacedPosition(bool isFacedRight)
     {
-        FLegOffset = new Vector3((isFacedRight ? 1 : -1), FLegOffset.y, FLegOffset.z);
-        BLegOffset = new Vector3((isFacedRight ? 1 : -1), BLegOffset.y, BLegOffset.z);
+         FLegOffset = new Vector3((isFacedRight ? 1 : -1), FLegOffset.y, FLegOffset.z);
+         BLegOffset = new Vector3((isFacedRight ? 1 : -1), BLegOffset.y, BLegOffset.z);
+
+       
         isFrontDirection = isFacedRight;
     }
 

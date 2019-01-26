@@ -35,9 +35,7 @@ public class StateChecker : MonoBehaviour
         else if (!IsGrounded)
             CurrentState = PlayerState.OnAir;
 
-
         CorrectIsGroundedPosition(); 
-
     }
 
     private void CorrectIsGroundedPosition()

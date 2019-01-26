@@ -11,8 +11,8 @@ public class SwordWeapon : Weapon
     public bool ISKOSTULTOCHECKERBODYPART;
 
     public override void Attack(ICanGetDamage damagedObject)
-    {
-        damagedObject.GetDamage(Damage,this);
+    {   
+        damagedObject.GetDamage(IsThrowingNow?Damage:Damage*0.8f,this);
         SetColdown();
     }
     private void Update()
@@ -36,13 +36,8 @@ public class SwordWeapon : Weapon
         AttackIdleParts.Emit(5);
     }
 
-    public override void Throw(Vector3 direction)
-    {
-        throw new System.NotImplementedException();
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
-    {
+    {      
         if (!IsHandleNow)
         {
             if (collision.tag == "Player")
@@ -53,10 +48,8 @@ public class SwordWeapon : Weapon
         }
        
 
-
         if (!IsAttackingNow || !IsColdownedNow())
             return;
-
 
         if (collision.tag == "Damagable")
         {   

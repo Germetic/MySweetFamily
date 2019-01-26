@@ -43,6 +43,7 @@ public class PlayerWeaponController : MonoBehaviour
                 FHandWeapon.Miss();
             }
             FHandWeapon = weaponToCatch;
+            weaponToCatch.GetComponent<SpriteRenderer>().sortingOrder = 2;
             FHandWeapon.gameObject.transform.parent = WeaponHandleFPoint;
             FHandWeapon.Initialize(this,"Unnamed");
             weaponToCatch.Catch();
@@ -55,6 +56,7 @@ public class PlayerWeaponController : MonoBehaviour
                 BHandWeapon.Miss();
             }
             BHandWeapon = weaponToCatch;
+            weaponToCatch.GetComponent<SpriteRenderer>().sortingOrder = -1;
             BHandWeapon.gameObject.transform.parent = WeaponHandleBPoint;
             BHandWeapon.Initialize(this, "Unnamed");
             weaponToCatch.Catch();
@@ -94,6 +96,37 @@ public class PlayerWeaponController : MonoBehaviour
         if(BHandWeapon!=null)
         BHandWeapon.Miss();
         BHandWeapon = null;
+    }
+    public void ThrowWeapon(bool isFrontHand, Vector2 diretionToThrow)
+    {
+        Weapon throwingWeapon = null;
+        if (isFrontHand)
+            throwingWeapon = (FHandWeapon != null) ? FHandWeapon : null;
+        else
+            throwingWeapon = (BHandWeapon != null) ? BHandWeapon : null;
+
+        if (throwingWeapon != null)
+        {
+            // throwingWeapon.transform.parent = null;
+            //Rigidbody2D rgb = throwingWeapon.GetComponent<Rigidbody2D>();
+            //throwingWeapon.GetComponent<Collider2D>().isTrigger = false;
+            // rgb.isKinematic = false;
+
+            //rgb.AddForce(diretionToThrow * 10f,ForceMode2D.Impulse);
+            throwingWeapon.ThrowTo(diretionToThrow);
+        }
+        else
+        {
+            Debug.Log("<color=orange><b> No weapon in current hand </b></color>");
+        }
+
+    }
+    public void RemoveWeapon(Weapon weapon)
+    {
+        if (FHandWeapon == weapon)
+            FHandWeapon = null;
+        if (BHandWeapon == weapon)
+            BHandWeapon = null;
     }
 
 }

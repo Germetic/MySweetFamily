@@ -10,7 +10,10 @@ public class PlayerController : MonoBehaviour
 
     public StateChecker StateChecker;
     public PlayerStateController PlayerStateController;
+    public PlayerWeaponController PlayerWeaponController;
     public WalkIKAnimation WalkIKAnimation;
+    public ArrowTargetController ArrowTargetController;
+    public float MaxVelocity;
     public float MovingSpeed;
     private float _currentMovingSpeed;
     [SerializeField]
@@ -39,9 +42,10 @@ public class PlayerController : MonoBehaviour
         Vector2 movingVelocity = _rigidBody.velocity;
         
         movingVelocity.x = _movingDirection.x * _currentMovingSpeed;
-        _rigidBody.velocity = movingVelocity;
+        movingVelocity.y = 0;
+        _rigidBody.velocity += movingVelocity;
+        _rigidBody.velocity = new Vector2(Mathf.Clamp(_rigidBody.velocity.x, -MaxVelocity, MaxVelocity), Mathf.Clamp(_rigidBody.velocity.y, -MaxVelocity, MaxVelocity));
 
-        
 
         _movingDirection = new Vector2(CanMoveHorizontal ? Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Horizontal : JoystickSaver.Instanse.Joystick2.Horizontal) : 0,
             CanMoveVertical ? Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Vertical : JoystickSaver.Instanse.Joystick2.Vertical) : 0);
@@ -73,6 +77,7 @@ public class PlayerController : MonoBehaviour
             WalkIKAnimation.SwitchFacedPosition(true);
         }
         CheckJump();
+        Debug.Log("<color=orange><b> VELOCITY </b></color>" + _rigidBody.velocity);
     }
 
     private void CheckJump()

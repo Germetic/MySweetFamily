@@ -11,18 +11,34 @@ public class ArrowTargetController : MonoBehaviour
     public float ArrowDistantion;
     public PlayerWeaponController PlayerWeaponController;
     private SpriteRenderer _arrowSprite;
-    private Vector2 _movingDirection;
+    private Vector2 _aimDirection;
 
     void Start()
     {
         _arrowSprite = Arrow.GetComponent<SpriteRenderer>();
     }
+    public Vector2 GetThrowingDirection()
+    {
+        /*
+        Vector3 playerPosition = new Vector2(0, 1);
+        if (IsFirstPlayer)
+            playerPosition = GameManager.Instance.Players[0].transform.position;
+        else
+            playerPosition = GameManager.Instance.Players[1].transform.position;
+
+        Vector2 directionVector = playerPosition - Arrow.transform.localPosition ;
+        var direction = directionVector / directionVector.magnitude;
+        Debug.Log("<color=orange><b> ArrowTargetController.direction </b></color>"  + direction);
+       
+        */
+        return _aimDirection;
+    }
 
     private void Update()
     {
-        _movingDirection.x = Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.AimHorizontal : JoystickSaver.Instanse.Joystick2.AimHorizontal);
-        _movingDirection.y = Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.AimVertical : JoystickSaver.Instanse.Joystick2.AimVertical);
-        SetArrowDirection(_movingDirection);
+        _aimDirection.x = Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.AimHorizontal : JoystickSaver.Instanse.Joystick2.AimHorizontal);
+        _aimDirection.y = Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.AimVertical : JoystickSaver.Instanse.Joystick2.AimVertical);
+        SetArrowDirection(_aimDirection);
     }
 
     private void SetArrowDirection(Vector2 direction)

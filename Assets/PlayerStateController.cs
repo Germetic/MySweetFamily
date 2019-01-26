@@ -68,6 +68,6 @@ public class PlayerStateController : MonoBehaviour
     {
         Debug.Log("<color=orange><b> DIR </b></color>" + direction);
        // rgb2d.AddForce(direction * power * 1000, ForceMode2D.Impulse);
-        rgb2d.velocity += new Vector2(direction.x * power * 100, direction.y * power * 100);
+        rgb2d.velocity += new Vector2(direction.x * power * 10000, direction.y + 0.1f * power * 10000);
     }
 }

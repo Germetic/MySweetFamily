@@ -1,11 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HandsIKMover : MonoBehaviour
 {
 
-    public bool IsFirstPlayer = false;
+    public bool IsFirstPlayer;
 
     public bool IsFrontHandAttacking;
     public bool IsBackHandAttacking;
@@ -29,6 +30,16 @@ public class HandsIKMover : MonoBehaviour
 
         IsFrontHandAttacking = Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire1 : JoystickSaver.Instanse.Joystick2.Fire1);
         IsBackHandAttacking = Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire2 : JoystickSaver.Instanse.Joystick2.Fire2);
+
+        if (Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire1T : JoystickSaver.Instanse.Joystick2.Fire1T))
+        {
+            ThrowWeapon(true);
+        }
+        if (Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire2T : JoystickSaver.Instanse.Joystick2.Fire2T))
+        {
+            ThrowWeapon(false);
+        }
+
         PlayerWeaponController.SetAttackState(IsFrontHandAttacking, IsBackHandAttacking);
 
         Dir = new Vector3((gameObject.transform.position.x - ArrowObject.transform.position.x), (gameObject.transform.position.y - ArrowObject.transform.position.y), 0);
@@ -69,5 +80,12 @@ public class HandsIKMover : MonoBehaviour
                 BHandIKObject.transform.rotation = Quaternion.Euler(Vector3.up);
         }
 
+    }
+
+    private void ThrowWeapon(bool IsFrontHand)
+    {
+        PlayerController player = GameManager.Instance.Players[IsFirstPlayer ? 0 : 1];
+        Vector2 direction = player.ArrowTargetController.GetThrowingDirection();
+        player.PlayerWeaponController.ThrowWeapon(IsFrontHand,direction);
     }
 }
