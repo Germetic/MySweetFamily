@@ -129,6 +129,8 @@ public class ChooseMenuItem : MonoBehaviour
         while (MenuManager.Instance.MainCamera.transform.position != endPosition)
         {
             MenuManager.Instance.MainCamera.transform.position = Vector3.Lerp(MenuManager.Instance.MainCamera.transform.position, endPosition, MenuManager.Instance.CameraMoveSpeed);
+            if (Vector3.Distance(MenuManager.Instance.MainCamera.transform.position, endPosition) < 0.05f)
+                MenuManager.Instance.MainCamera.transform.position = endPosition;
             yield return new WaitForFixedUpdate();
         }
             _cameraMove = null;

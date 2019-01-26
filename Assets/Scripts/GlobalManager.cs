@@ -6,6 +6,9 @@ public class GlobalManager : MonoBehaviour
 {
     public static GlobalManager Instance;
 
+    public bool IsCountDownEnded = false;
+    public bool IsScoreShowed = false;
+
     public int PlayerOneModel = 0;
     public int PlayerTwoModel = 0;
 
@@ -14,6 +17,15 @@ public class GlobalManager : MonoBehaviour
     public int PlayerOneScore = 0;
     public int PlayerTwoScore = 0;
 
+
+    public void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(this);
+        DontDestroyOnLoad(this);
+    }
     
 }
 
