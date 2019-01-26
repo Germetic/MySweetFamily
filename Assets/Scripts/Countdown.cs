@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Countdown : MonoBehaviour
 {
-
+    public bool NeedCountdown = true;
     public Image BlackScreen;
     public Text CountdownTxt;
     public float Delay = 0.4f;
@@ -31,17 +31,20 @@ public class Countdown : MonoBehaviour
     {
         BlackScreen.CrossFadeAlpha(0, CrossFadeTime, false);
         yield return new WaitForSecondsRealtime(CrossFadeTime);
-        CountdownTxt.gameObject.SetActive(true);
-        yield return new WaitForSecondsRealtime(Delay);
-        CountdownTxt.text = "2";
-        yield return new WaitForSecondsRealtime(Delay);
-        CountdownTxt.text = "1";
-        yield return new WaitForSecondsRealtime(Delay);
-        CountdownTxt.text = "GO";
-        yield return new WaitForSecondsRealtime(Delay);
-        CountdownTxt.gameObject.SetActive(false);
-        GlobalManager.Instance.IsCountDownEnded = true;
-        GameEvents.Instance.OnCountdownEnd.Invoke();
+        if (NeedCountdown)
+        {
+            CountdownTxt.gameObject.SetActive(true);
+            yield return new WaitForSecondsRealtime(Delay);
+            CountdownTxt.text = "2";
+            yield return new WaitForSecondsRealtime(Delay);
+            CountdownTxt.text = "1";
+            yield return new WaitForSecondsRealtime(Delay);
+            CountdownTxt.text = "GO";
+            yield return new WaitForSecondsRealtime(Delay);
+            CountdownTxt.gameObject.SetActive(false);
+            GlobalManager.Instance.IsCountDownEnded = true;
+            GameEvents.Instance.OnCountdownEnd.Invoke();
+        }
 
     }
     

@@ -96,10 +96,12 @@ public class AddPlayer : MonoBehaviour
         {
             IsPl1Ready = !IsPl1Ready;
                 PlayerStatusTxt[0].text = IsPl1Ready ? _readyTxt : _pressA;
+            GlobalManager.Instance.PlayerOneModel = _currentPl1;
         } else
         {
             IsPl2Ready = !IsPl2Ready;
             PlayerStatusTxt[1].text = IsPl2Ready ? _readyTxt : _pressA;
+            GlobalManager.Instance.PlayerTwoModel = _currentPl2;
         }
         CheckIsPlayerReady();
     }
