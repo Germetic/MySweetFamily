@@ -37,6 +37,7 @@ public class PlayerStateController : MonoBehaviour
         Vector2 directionVector = transform.position - damageSource.position;
         var direction = directionVector / directionVector.magnitude;
         FoldBack(damage, direction);
+        AudioManager.Instance.Play("MenGetDamage");
     }
 
     private void Kill()

@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
         {
             _rigidBody.velocity = new Vector2(_rigidBody.velocity.x, 0);
             _rigidBody.AddForce(Vector2.up * JumpForce * _rigidBody.gravityScale, ForceMode2D.Impulse);
+            AudioManager.Instance.Play("Jump");
         }
     }
 

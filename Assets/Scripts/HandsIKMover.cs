@@ -87,5 +87,6 @@ public class HandsIKMover : MonoBehaviour
         PlayerController player = GameManager.Instance.Players[IsFirstPlayer ? 0 : 1];
         Vector2 direction = player.ArrowTargetController.GetThrowingDirection();
         player.PlayerWeaponController.ThrowWeapon(IsFrontHand,direction);
+        AudioManager.Instance.Play("Throw");
     }
 }
