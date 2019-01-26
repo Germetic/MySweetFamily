@@ -36,8 +36,12 @@ public class ArrowTargetController : MonoBehaviour
 
     private void Update()
     {
-        _aimDirection.x = Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.AimHorizontal : JoystickSaver.Instanse.Joystick2.AimHorizontal);
-        _aimDirection.y = Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.AimVertical : JoystickSaver.Instanse.Joystick2.AimVertical);
+        _aimDirection = new Vector2(0, 0);
+        if (!GlobalManager.Instance.IsScoreShowed && GlobalManager.Instance.IsCountDownEnded)
+        {
+            _aimDirection.x = Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.AimHorizontal : JoystickSaver.Instanse.Joystick2.AimHorizontal);
+            _aimDirection.y = Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.AimVertical : JoystickSaver.Instanse.Joystick2.AimVertical);
+        }
         SetArrowDirection(_aimDirection);
     }
 

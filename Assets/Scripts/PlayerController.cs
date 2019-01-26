@@ -46,9 +46,13 @@ public class PlayerController : MonoBehaviour
         _rigidBody.velocity += movingVelocity;
         _rigidBody.velocity = new Vector2(Mathf.Clamp(_rigidBody.velocity.x, -MaxVelocity, MaxVelocity), Mathf.Clamp(_rigidBody.velocity.y, -MaxVelocity, MaxVelocity));
 
+        _movingDirection = new Vector2(0, 0);
 
-        _movingDirection = new Vector2(CanMoveHorizontal ? Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Horizontal : JoystickSaver.Instanse.Joystick2.Horizontal) : 0,
+        if (!GlobalManager.Instance.IsScoreShowed && GlobalManager.Instance.IsCountDownEnded)
+        {
+            _movingDirection = new Vector2(CanMoveHorizontal ? Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Horizontal : JoystickSaver.Instanse.Joystick2.Horizontal) : 0,
             CanMoveVertical ? Input.GetAxis(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Vertical : JoystickSaver.Instanse.Joystick2.Vertical) : 0);
+        }
         //if player stay(0) and move(>0)
         float movingDirectionXAbsolute = Mathf.Abs(_movingDirection.x);
         _currentMovingSpeed =  MovingSpeed * movingDirectionXAbsolute;
@@ -82,9 +86,12 @@ public class PlayerController : MonoBehaviour
 
     private void CheckJump()
     {
-        if (Input.GetKey( IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Jump : JoystickSaver.Instanse.Joystick2.Jump) /*&& IsGrounded*/)
+        if (!GlobalManager.Instance.IsScoreShowed && GlobalManager.Instance.IsCountDownEnded)
         {
-            Jump();
+            if (Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Jump : JoystickSaver.Instanse.Joystick2.Jump) /*&& IsGrounded*/)
+            {
+                Jump();
+            }
         }
     }
 

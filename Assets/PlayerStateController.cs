@@ -39,14 +39,23 @@ public class PlayerStateController : MonoBehaviour
         FoldBack(damage, direction);
     }
 
-    private void Kill()
+    public void Kill()
     {
         Debug.Log("<color=red><b> PlayerDie </b></color>");
         PlayerStatsDisplayer.DisplayAsDead();
         GetComponent<SpriteRenderer>().color = Color.black;
         HEADIKOBJECT.GetComponent<CircleCollider2D>().isTrigger = false;
         HEADIKOBJECT.GetComponent<Rigidbody2D>().isKinematic = false;
+        StartCoroutine(TimerToScore());
     }
+
+    private IEnumerator TimerToScore()
+    {
+        GlobalManager.Instance.IsScoreShowed = true;
+        yield return new WaitForSecondsRealtime(1f);
+        FinalScore.Instance.ShowScore();
+    }
+
     public bool IsCurrentPlayerBodyPart(ICanGetDamage bodyPart)
     {
         bool isCurrentPlayerBodyPart = false;

@@ -27,19 +27,20 @@ public class HandsIKMover : MonoBehaviour
 
     void Update()
     {
-
-        IsFrontHandAttacking = Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire1 : JoystickSaver.Instanse.Joystick2.Fire1);
-        IsBackHandAttacking = Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire2 : JoystickSaver.Instanse.Joystick2.Fire2);
-
-        if (Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire1T : JoystickSaver.Instanse.Joystick2.Fire1T))
+        if (!GlobalManager.Instance.IsScoreShowed && GlobalManager.Instance.IsCountDownEnded)
         {
-            ThrowWeapon(true);
-        }
-        if (Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire2T : JoystickSaver.Instanse.Joystick2.Fire2T))
-        {
-            ThrowWeapon(false);
-        }
+            IsFrontHandAttacking = Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire1 : JoystickSaver.Instanse.Joystick2.Fire1);
+            IsBackHandAttacking = Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire2 : JoystickSaver.Instanse.Joystick2.Fire2);
 
+            if (Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire1T : JoystickSaver.Instanse.Joystick2.Fire1T))
+            {
+                ThrowWeapon(true);
+            }
+            if (Input.GetKey(IsFirstPlayer ? JoystickSaver.Instanse.Joystick1.Fire2T : JoystickSaver.Instanse.Joystick2.Fire2T))
+            {
+                ThrowWeapon(false);
+            }
+        }
         PlayerWeaponController.SetAttackState(IsFrontHandAttacking, IsBackHandAttacking);
 
         Dir = new Vector3((gameObject.transform.position.x - ArrowObject.transform.position.x), (gameObject.transform.position.y - ArrowObject.transform.position.y), 0);

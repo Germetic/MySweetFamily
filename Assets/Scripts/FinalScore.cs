@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class FinalScore : MonoBehaviour
 {
+    public static FinalScore Instance;
+
     public Vector3 ScoreCameraPosition;
+    public float ScoreCameraSize = 25;
     public Transform PlayerOnePlatform;
     public Transform PlayerTwoPlatform;
 
@@ -17,8 +20,17 @@ public class FinalScore : MonoBehaviour
     public float PlatformGrowDelay;
     public float ShowScoreTime = 2;
 
-    private float _maxScoreLenght = 8;
+    public float MaxScoreLenght = 8;
+
+    [HideInInspector] public Camera CurrentCamera;
     private float _maxScore = 50;
+
+
+    public void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+    }
 
 
     public void ShowScore()
@@ -33,12 +45,19 @@ public class FinalScore : MonoBehaviour
 
     private IEnumerator MoveCamera(Vector3 endPosition)
     {
-        Vector3 startPosition = MenuManager.Instance.MainCamera.transform.position;
-        while (MenuManager.Instance.MainCamera.transform.position != endPosition)
+        Vector3 startPosition = CurrentCamera.transform.position;
+        bool isDone = false;
+        while (!isDone)
         {
-            MenuManager.Instance.MainCamera.transform.position = Vector3.Lerp(MenuManager.Instance.MainCamera.transform.position, endPosition, MenuManager.Instance.CameraMoveSpeed);
-            if(Vector3.Distance(MenuManager.Instance.MainCamera.transform.position, endPosition) < 0.05f)
-                MenuManager.Instance.MainCamera.transform.position =endPosition;
+            CurrentCamera.transform.position = Vector3.Lerp(CurrentCamera.transform.position, endPosition, MenuManager.Instance.CameraMoveSpeed);
+            CurrentCamera.orthographicSize = Mathf.Lerp(CurrentCamera.orthographicSize, ScoreCameraSize, MenuManager.Instance.CameraMoveSpeed);
+            if (Vector3.Distance(CurrentCamera.transform.position, endPosition) < 0.05f)
+                CurrentCamera.transform.position =endPosition;
+            if (Mathf.Abs(CurrentCamera.orthographicSize - ScoreCameraSize) < 0.05f)
+                CurrentCamera.orthographicSize = ScoreCameraSize;
+
+            if (CurrentCamera.transform.position == endPosition && CurrentCamera.orthographicSize == ScoreCameraSize)
+                isDone = true;
             yield return new WaitForFixedUpdate();
         }
 
@@ -52,7 +71,7 @@ public class FinalScore : MonoBehaviour
     {
         float finalScore = 0.1f;
         if(score > 0)
-            finalScore = score * _maxScoreLenght / _maxScore;
+            finalScore = score * MaxScoreLenght / _maxScore;
         return finalScore;
 
     }

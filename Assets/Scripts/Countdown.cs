@@ -43,7 +43,7 @@ public class Countdown : MonoBehaviour
             yield return new WaitForSecondsRealtime(Delay);
             CountdownTxt.gameObject.SetActive(false);
             GlobalManager.Instance.IsCountDownEnded = true;
-            GameEvents.Instance.OnCountdownEnd.Invoke();
+            //GameEvents.Instance.OnCountdownEnd.Invoke();
         }
 
     }
