@@ -40,6 +40,7 @@ public class PlayerStateController : MonoBehaviour
         if(directionVector.magnitude != 0)
             direction = directionVector / directionVector.magnitude;
         FoldBack(damage, direction);
+        AudioManager.Instance.Play("MenGetDamage");
     }
 
     public void Kill()
