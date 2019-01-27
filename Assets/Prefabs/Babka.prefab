@@ -5071,7 +5071,7 @@ GameObject:
   - component: {fileID: 7708031180417195124}
   - component: {fileID: 7708031180417195125}
   m_Layer: 0
-  m_Name: Player (1)
+  m_Name: Babka
   m_TagString: Player
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5143,7 +5143,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 1c05e0b00414b5a44a0079a89b29e13d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5265,7 +5265,7 @@ MonoBehaviour:
   MovingSpeed: 2
   CanMoveHorizontal: 1
   CanMoveVertical: 1
-  JumpForce: 450
+  JumpForce: 650
 --- !u!114 &7708031180417195082
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5303,6 +5303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerStateController: {fileID: 7708031180417195124}
+  IsFirstPlayer: 0
   FHandWeapon: {fileID: 0}
   BHandWeapon: {fileID: 0}
   WeaponHandleFPoint: {fileID: 7708031181024378401}

@@ -5046,7 +5046,7 @@ MonoBehaviour:
   MovingSpeed: 2
   CanMoveHorizontal: 1
   CanMoveVertical: 1
-  JumpForce: 450
+  JumpForce: 650
 --- !u!114 &7223906070314407154
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -50,7 +50,6 @@ MonoBehaviour:
     - {fileID: 8300000, guid: ac6220d3bf14c8b4b9994550710dc860, type: 3}
     - {fileID: 8300000, guid: c4be186f88cd6f442870077f8b05bdbe, type: 3}
     - {fileID: 8300000, guid: 56815e069a41d1a47910110e1151bbaf, type: 3}
-    - {fileID: 8300000, guid: 18770c483ff368c4684ac5dbdc07e7da, type: 3}
     - {fileID: 8300000, guid: 05359c4794d99de4683809cd378aace9, type: 3}
     - {fileID: 8300000, guid: 51450ec30bee1bb4dab05784f3bf434b, type: 3}
   - Name: GMGetDamage
@@ -63,9 +62,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 5a03e620f4506304f887a95fa2c79d60, type: 3}
   - Name: Jump
     AudioVariants:
-    - {fileID: 8300000, guid: 9dd1ef356fccb054196ef6803f6a2c2d, type: 3}
     - {fileID: 8300000, guid: e0712647bb9356048bd147192f46be89, type: 3}
-    - {fileID: 8300000, guid: 23d60f644fc463f49bae964b4ca6c717, type: 3}
   - Name: Throw
     AudioVariants:
     - {fileID: 8300000, guid: 246a6c984d9d98548a9ccab132d61361, type: 3}
