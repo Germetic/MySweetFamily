@@ -38283,6 +38283,7 @@ MonoBehaviour:
   WeaponSpawnPoints:
   - {fileID: 876607713}
   - {fileID: 271182314}
+  - {fileID: 271182314}
   SpawnedWeapon: []
 --- !u!4 &1358007601
 Transform:

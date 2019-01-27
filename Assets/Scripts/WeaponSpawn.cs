@@ -35,7 +35,7 @@ public class WeaponSpawn : MonoBehaviour
 
     private Transform GetRandomPoint()
     {
-        return GameManager.Instance.WeaponSpawnPoints[Random.Range(0, GameManager.Instance.WeaponSpawnPoints.Count - 1)];
+        return GameManager.Instance.WeaponSpawnPoints[Random.Range((int)0, (int)GameManager.Instance.WeaponSpawnPoints.Count - 1)];
     }
 
     private GameObject GetRandomWeapon()
