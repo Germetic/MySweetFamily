@@ -79,12 +79,15 @@ public class AddPlayer : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown(KeyCode.Joystick3Button2))
+
+            if (Input.GetKeyDown(KeyCode.Joystick1Button2))
             {
                 SetPlayerReady(true);
+                Debug.Log("<color=orange><b> Joystick3Button2 </b></color>");
             }
             if (Input.GetKeyDown(KeyCode.Joystick2Button2))
             {
+                Debug.Log("<color=orange><b> Joystick2Button2 </b></color>");
                 SetPlayerReady(false);
             }
         }
@@ -162,7 +165,15 @@ public class AddPlayer : MonoBehaviour
     {
         if(IsPl1Ready && IsPl2Ready)
         {
-            ScenesNumbers _scene = (ScenesNumbers)Random.Range((int)ScenesNumbers.Kitchen, (int)ScenesNumbers.Kitchen);
+            ScenesNumbers _scene = ScenesNumbers.Menu;
+            if (GlobalManager.Instance.CurrentLocation == ScenesNumbers.Kitchen)
+            {
+                _scene = ScenesNumbers.Kitchen;
+            }
+            else
+            {
+                _scene = ScenesNumbers.Hall;
+            }
             GlobalManager.Instance.CurrentLocation = _scene;
             SceneManager.LoadScene((int)_scene);
         }

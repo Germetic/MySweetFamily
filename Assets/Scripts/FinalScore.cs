@@ -22,7 +22,7 @@ public class FinalScore : MonoBehaviour
 
     public float MaxScoreLenght = 8;
 
-    [HideInInspector] public Camera CurrentCamera;
+    public Camera CurrentCamera;
     private float _maxScore = 50;
 
 
@@ -35,6 +35,7 @@ public class FinalScore : MonoBehaviour
 
     public void ShowScore()
     {
+        
         PlayerOnePlatform.localScale = new Vector3(PlayerOnePlatform.localScale.x,0.1f, PlayerOnePlatform.localScale.z);
         PlayerTwoPlatform.localScale = new Vector3(PlayerTwoPlatform.localScale.x, 0.1f, PlayerTwoPlatform.localScale.z);
         GlobalManager.Instance.IsScoreShowed = true;
@@ -123,7 +124,15 @@ public class FinalScore : MonoBehaviour
 
     private void LoadNewLevel()
     {
-        ScenesNumbers _scene = (ScenesNumbers)Random.Range((int)ScenesNumbers.Kitchen, (int)ScenesNumbers.Kitchen);
+        ScenesNumbers _scene = ScenesNumbers.Menu;
+        if (GlobalManager.Instance.CurrentLocation == ScenesNumbers.Kitchen)
+        {
+            _scene = ScenesNumbers.Hall;
+        }
+        else
+        {
+            _scene = ScenesNumbers.Kitchen;
+        }
         GlobalManager.Instance.CurrentLocation = _scene;
         UnityEngine.SceneManagement.SceneManager.LoadScene((int)_scene);
     }

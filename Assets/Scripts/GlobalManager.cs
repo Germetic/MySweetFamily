@@ -45,7 +45,7 @@ public class GlobalManager : MonoBehaviour
 public enum ScenesNumbers
 {
     Menu = 0,
-    Kitchen = 1
-    //Hall = 2,
+    Kitchen = 1,
+    Hall = 2
     //Lenght = 3
 }

@@ -93,11 +93,11 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   PlayerStatsDisplayerPl1: {fileID: 0}
   PlayerStatsDisplayerPl2: {fileID: 0}
-  JumpPl1: 393
-  Fire1Pl1: 394
-  Fire2Pl1: 395
-  Fire1TPl1: 396
-  Fire2TPl1: 397
+  JumpPl1: 353
+  Fire1Pl1: 354
+  Fire2Pl1: 355
+  Fire1TPl1: 356
+  Fire2TPl1: 357
   HorizontalPl1: Horizontal
   VerticalPl1: Vertical
   AimHorizontalPl1: HorizontalAim

@@ -46,8 +46,15 @@ public class PlayerStateController : MonoBehaviour
     public void Kill()
     {
         Debug.Log("<color=red><b> PlayerDie </b></color>");
+        if(PlayerWeaponController.IsFirstPlayer)
+        {
+            GlobalManager.Instance.PlayerTwoScore += 10;
+        } else
+        {
+            GlobalManager.Instance.PlayerOneScore += 10;
+        }
         PlayerStatsDisplayer.DisplayAsDead();
-        GetComponent<SpriteRenderer>().color = Color.black;
+        GetComponent<SpriteRenderer>().color = Color.gray;
         HEADIKOBJECT.GetComponent<CircleCollider2D>().isTrigger = false;
         HEADIKOBJECT.GetComponent<Rigidbody2D>().isKinematic = false;
         StartCoroutine(TimerToScore());
@@ -56,6 +63,7 @@ public class PlayerStateController : MonoBehaviour
     private IEnumerator TimerToScore()
     {
         GlobalManager.Instance.IsScoreShowed = true;
+        Camera.main.GetComponent<Animator>().enabled = false;
         yield return new WaitForSecondsRealtime(1f);
         FinalScore.Instance.ShowScore();
     }

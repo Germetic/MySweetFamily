@@ -196,7 +196,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 0
-    joyNum: 3
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Vertical
     descriptiveName: 
@@ -212,7 +212,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 1
-    joyNum: 3
+    joyNum: 1
   - serializedVersion: 3
     m_Name: HorizontalJ2
     descriptiveName: 
@@ -260,7 +260,7 @@ InputManager:
     invert: 0
     type: 2
     axis: 4
-    joyNum: 3
+    joyNum: 1
   - serializedVersion: 3
     m_Name: VerticalAim
     descriptiveName: 
@@ -276,7 +276,7 @@ InputManager:
     invert: 1
     type: 2
     axis: 2
-    joyNum: 3
+    joyNum: 1
   - serializedVersion: 3
     m_Name: HorizontalAimJ2
     descriptiveName: 
