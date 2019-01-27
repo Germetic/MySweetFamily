@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1660180396214728082
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660180396214728092}
+  - component: {fileID: 1660180396214728083}
+  - component: {fileID: 1660180396214728093}
+  - component: {fileID: 1660180396214728094}
+  - component: {fileID: 1660180396214728095}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1660180396214728092
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660180396214728082}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -78.46533, y: 13.03378, z: 0.0640625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1660180396214728083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660180396214728082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f9b65198f69c04f88046cb0539b9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstPlayerWeaponController: {fileID: 0}
+  FirstPlayerFHandWeapon: {fileID: 0}
+  FirstPlayerBHandWeapon: {fileID: 0}
+  SecondPlayerWeaponController: {fileID: 0}
+  SecondPlayerFHandWeapon: {fileID: 0}
+  SecondPlayerBHandWeapon: {fileID: 0}
+--- !u!114 &1660180396214728093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660180396214728082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5cdce48b992b3438c0c41a883387fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Joystick1: {fileID: 0}
+  Joystick2: {fileID: 0}
+--- !u!114 &1660180396214728094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660180396214728082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cabcc1d0d22d0048811bb12383a5cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerOneModels:
+  - {fileID: 7223906070314407162, guid: 8663855f2e1a5c8438722f82e9ed18f7, type: 3}
+  - {fileID: 7708031180417195126, guid: 080500ca66b654e40a4e5c93679267ae, type: 3}
+  - {fileID: 305278531, guid: 455315b3c83c49145b924191ca667f05, type: 3}
+  PlayerTwoModels:
+  - {fileID: 7223906070314407162, guid: 8663855f2e1a5c8438722f82e9ed18f7, type: 3}
+  - {fileID: 7708031180417195126, guid: 080500ca66b654e40a4e5c93679267ae, type: 3}
+  - {fileID: 305278531, guid: 455315b3c83c49145b924191ca667f05, type: 3}
+  MainCamera: {fileID: 0}
+  PlayerOneSpawnPoint: {fileID: 0}
+  PlayerTwoSpawnPoint: {fileID: 0}
+  FirstTestLevelManager: {fileID: 1660180396214728083}
+  GameManager: {fileID: 0}
+  PlayerStatsDisplayerPl1: {fileID: 0}
+  PlayerStatsDisplayerPl2: {fileID: 0}
+  JumpPl1: 393
+  Fire1Pl1: 394
+  Fire2Pl1: 395
+  Fire1TPl1: 396
+  Fire2TPl1: 397
+  HorizontalPl1: Horizontal
+  VerticalPl1: Vertical
+  AimHorizontalPl1: HorizontalAim
+  AimVerticalPl1: VerticalAim
+  JumpPl2: 373
+  Fire1Pl2: 376
+  Fire2Pl2: 377
+  Fire1TPl2: 374
+  Fire2TPl2: 375
+  HorizontalPl2: HorizontalJ2
+  VerticalPl2: VerticalJ2
+  AimHorizontalPl2: HorizontalAimJ2
+  AimVerticalPl2: VerticalAimJ2
+--- !u!114 &1660180396214728095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660180396214728082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35c44751f8113d4abdd439820883c44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinTimeBetweenSpawn: 3
+  MaxTimeBetweenSpawn: 10
