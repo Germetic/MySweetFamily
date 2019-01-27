@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class AddPlayer : MonoBehaviour
 {
-
+    
 
     public bool IsPl1Ready = false;
     public bool IsPl2Ready = false;

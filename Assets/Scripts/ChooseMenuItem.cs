@@ -7,6 +7,7 @@ using TMPro;
 public class ChooseMenuItem : MonoBehaviour
 {
 
+    public AddPlayer AddPlayer;
     public List<TextMeshPro> MenuItems;
     public Color DefaultMenuColor;
     public Color SelectedMenuColor;
@@ -107,6 +108,22 @@ public class ChooseMenuItem : MonoBehaviour
                 _cameraMove = null;
             }
 
+            foreach(GameObject _go in MenuManager.Instance.Arrow)
+            {
+                _go.SetActive(false);
+            }
+            foreach (GameObject _go in MenuManager.Instance.Ready)
+            {
+                _go.SetActive(false);
+            }
+            foreach(GameObject _go in AddPlayer.PlayerOneModels)
+            {
+                _go.SetActive(false);
+            }
+            foreach (GameObject _go in AddPlayer.PlayerTwoModels)
+            {
+                _go.SetActive(false);
+            }
             _cameraMove = StartCoroutine(MoveCamera(MenuManager.Instance.MenuCameraPosition));
         } else
         {
@@ -116,8 +133,16 @@ public class ChooseMenuItem : MonoBehaviour
                 StopCoroutine(_cameraMove);
                 _cameraMove = null;
             }
-
-            _cameraMove = StartCoroutine(MoveCamera(MenuManager.Instance.SelectPlayerCameraPosition));
+            foreach (GameObject _go in MenuManager.Instance.Arrow)
+            {
+                _go.SetActive(true);
+            }
+            foreach (GameObject _go in MenuManager.Instance.Ready)
+            {
+                _go.SetActive(true);
+            }
+            AddPlayer.PlayerOneModels[GlobalManager.Instance.PlayerOneModel].SetActive(true);
+                AddPlayer.PlayerTwoModels[GlobalManager.Instance.PlayerTwoModel].SetActive(true);
         }
         //MenuManager.Instance.MainCamera.transform.position = MenuManager.Instance.SelectPlayerCameraPosition;
         
@@ -125,12 +150,12 @@ public class ChooseMenuItem : MonoBehaviour
 
     private IEnumerator MoveCamera(Vector3 endPosition)
     {
-        Vector3 startPosition = MenuManager.Instance.MainCamera.transform.position;
-        while (MenuManager.Instance.MainCamera.transform.position != endPosition)
+        Vector3 startPosition = MenuManager.Instance.Panel.transform.position;
+        while (MenuManager.Instance.Panel.transform.position != endPosition)
         {
-            MenuManager.Instance.MainCamera.transform.position = Vector3.Lerp(MenuManager.Instance.MainCamera.transform.position, endPosition, MenuManager.Instance.CameraMoveSpeed);
-            if (Vector3.Distance(MenuManager.Instance.MainCamera.transform.position, endPosition) < 0.05f)
-                MenuManager.Instance.MainCamera.transform.position = endPosition;
+            MenuManager.Instance.Panel.transform.position = Vector3.Lerp(MenuManager.Instance.Panel.transform.position, endPosition, MenuManager.Instance.CameraMoveSpeed);
+            if (Vector3.Distance(MenuManager.Instance.Panel.transform.position, endPosition) < 0.05f)
+                MenuManager.Instance.Panel.transform.position = endPosition;
             yield return new WaitForFixedUpdate();
         }
             _cameraMove = null;

@@ -5,7 +5,9 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
-    public Camera MainCamera;
+    public Transform Panel;
+    public List<GameObject> Ready;
+    public List<GameObject> Arrow;
     public float CameraMoveSpeed;
     public Vector3 MenuCameraPosition;
     public Vector3 SelectPlayerCameraPosition;
