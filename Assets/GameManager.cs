@@ -7,6 +7,12 @@ public class GameManager : MonoBehaviour
 
     public PlayerController[] Players;
 
+    public List<GameObject> Weapon;
+
+    public List<Transform> WeaponSpawnPoints;
+
+    public List<GameObject> SpawnedWeapon;
+
     public static GameManager Instance = null;
 
     void Start()
@@ -15,7 +21,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
-        else if (Instance == this)
+        else
         {
             Destroy(gameObject);
         }

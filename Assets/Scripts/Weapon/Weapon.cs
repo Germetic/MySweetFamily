@@ -3,12 +3,15 @@
 public abstract class Weapon : MonoBehaviour , ICanDoDamage
 {
     public string Name;
+    public ScenesNumbers Location;
     public float Damage;
     public float ColdownTime;
 
     public bool IsAttackingNow;
     public bool IsHandleNow;
     public bool IsThrowingNow;
+    public bool IsFirstPlayer = false;
+    
 
 
     public Vector3 OnHandsPosition;
@@ -25,6 +28,7 @@ public abstract class Weapon : MonoBehaviour , ICanDoDamage
     public virtual void Initialize(PlayerWeaponController owner,string name="Unnamed")
     {
         PlayerWeaponController = owner;
+        IsFirstPlayer = owner.IsFirstPlayer;
         IsHandleNow = true;
         Name = name;
         if (CanCatchParts != null)
@@ -86,19 +90,26 @@ public abstract class Weapon : MonoBehaviour , ICanDoDamage
 
     public Transform GetPosition()
     {
-        return PlayerWeaponController.transform;
+        //Transform _trf = null;
+        //if(PlayerWeaponController != null)
+        //    _trf = PlayerWeaponController.transform;
+        return transform;
     }
     protected void OnCollisionEnter2D(Collision2D collision)
     {
         if (IsThrowingNow)
         {
-            Debug.Log("<color=orange><b> ISTHROWINGNOW </b></color>");
-            if (collision.collider.tag == "Damagable")
+            if (collision.collider.gameObject.GetComponentInParent<PlayerController>() != null)
+                if(collision.collider.gameObject.GetComponentInParent<PlayerController>().IsFirstPlayer != IsFirstPlayer)
             {
-                Debug.Log("<color=orange><b> collision name :  </b></color>" + collision.gameObject.name);
-                ICanGetDamage damagedObject = collision.collider.gameObject.GetComponent<ICanGetDamage>();
-                Attack(damagedObject);
-                Debug.Log("<color=orange><b> ISTHROWINGNOW COL</b></color>");
+                Debug.Log("<color=orange><b> ISTHROWINGNOW </b></color>");
+                if (collision.collider.tag == "Damagable")
+                {
+                    Debug.Log("<color=orange><b> collision name :  </b></color>" + collision.gameObject.name);
+                    ICanGetDamage damagedObject = collision.collider.gameObject.GetComponent<ICanGetDamage>();
+                    Attack(damagedObject);
+                    Debug.Log("<color=orange><b> ISTHROWINGNOW COL</b></color>");
+                }
             }
         }
     }

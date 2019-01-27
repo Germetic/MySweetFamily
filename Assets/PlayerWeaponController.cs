@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerWeaponController : MonoBehaviour
 {
     public PlayerStateController PlayerStateController;
+    public bool IsFirstPlayer = false;
     public Weapon FHandWeapon;
     public Weapon BHandWeapon;
     public Transform WeaponHandleFPoint;

@@ -35,7 +35,10 @@ public class PlayerStateController : MonoBehaviour
         PlayerStatsDisplayer.UpdateHealthBar();
 
         Vector2 directionVector = transform.position - damageSource.position;
-        var direction = directionVector / directionVector.magnitude;
+        Debug.Log(directionVector.x + " " + directionVector.y + " " + directionVector.magnitude);
+        Vector2 direction = new Vector2(0, 0);
+        if(directionVector.magnitude != 0)
+            direction = directionVector / directionVector.magnitude;
         FoldBack(damage, direction);
     }
 

@@ -97,6 +97,7 @@ public class PlayerGameSpawner : MonoBehaviour
             _pl.GetComponent<PlayerStateController>().PlayerStatsDisplayer = PlayerStatsDisplayerPl2;
         }
         _pl.GetComponent<PlayerController>().IsFirstPlayer = IsFirstPlayer;
+        _pl.GetComponent<PlayerWeaponController>().IsFirstPlayer = IsFirstPlayer;
         _pl.GetComponentInChildren<ArrowTargetController>().IsFirstPlayer = IsFirstPlayer;
         _pl.GetComponentInChildren<HandsIKMover>().IsFirstPlayer = IsFirstPlayer;
         _pl.SetActive(true);

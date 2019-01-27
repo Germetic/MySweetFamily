@@ -108,6 +108,7 @@ public class FinalScore : MonoBehaviour
 
         if(GlobalManager.Instance.PlayerOneScore >= GlobalManager.Instance.MaxScore || GlobalManager.Instance.PlayerTwoScore >= GlobalManager.Instance.MaxScore)
         {
+            GlobalManager.Instance.CurrentLocation = ScenesNumbers.Menu;
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
             GlobalManager.Instance.ClearData();
         }
@@ -122,6 +123,8 @@ public class FinalScore : MonoBehaviour
 
     private void LoadNewLevel()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(Random.Range((int)ScenesNumbers.Kitchen, (int)ScenesNumbers.Kitchen));
+        ScenesNumbers _scene = (ScenesNumbers)Random.Range((int)ScenesNumbers.Kitchen, (int)ScenesNumbers.Kitchen);
+        GlobalManager.Instance.CurrentLocation = _scene;
+        UnityEngine.SceneManagement.SceneManager.LoadScene((int)_scene);
     }
 }

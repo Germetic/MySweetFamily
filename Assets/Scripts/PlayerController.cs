@@ -81,7 +81,6 @@ public class PlayerController : MonoBehaviour
             WalkIKAnimation.SwitchFacedPosition(true);
         }
         CheckJump();
-        Debug.Log("<color=orange><b> VELOCITY </b></color>" + _rigidBody.velocity);
     }
 
     private void CheckJump()

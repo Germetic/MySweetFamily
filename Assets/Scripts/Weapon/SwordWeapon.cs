@@ -58,22 +58,30 @@ public class SwordWeapon : Weapon
             {
                     ICanGetDamage damagedObject = collision.GetComponent<ICanGetDamage>();
                 //КОСТЫЛЬ ГОДА
-                if (ISKOSTULTOCHECKERBODYPART)
-                {
-                    if (damagedObject != null && PlayerWeaponController.PlayerStateController.IsCurrentPlayerBodyPart(damagedObject))
-                    {
-                        Attack(collision.GetComponent<ICanGetDamage>());
-                        // Debug.Log(gameObject.name + "<color=orange><b> ТАЧ </b></color>" + collision.name);
-                    }
-                }
-                else
-                {
-                    if (damagedObject != null && !PlayerWeaponController.PlayerStateController.IsCurrentPlayerBodyPart(damagedObject))
-                    {
-                        Attack(collision.GetComponent<ICanGetDamage>());
-                        // Debug.Log(gameObject.name + "<color=orange><b> ТАЧ </b></color>" + collision.name);
-                    }
-                }
+                if (collision.gameObject.GetComponentInParent<PlayerController>() != null)
+                    if (collision.gameObject.GetComponentInParent<PlayerController>().IsFirstPlayer != IsFirstPlayer)
+                        if (damagedObject != null && PlayerWeaponController.PlayerStateController.IsCurrentPlayerBodyPart(damagedObject))
+                        {
+                            Attack(collision.GetComponent<ICanGetDamage>());
+                            // Debug.Log(gameObject.name + "<color=orange><b> ТАЧ </b></color>" + collision.name);
+                        }
+
+                //if (ISKOSTULTOCHECKERBODYPART)
+                //{
+                //    if (damagedObject != null && PlayerWeaponController.PlayerStateController.IsCurrentPlayerBodyPart(damagedObject))
+                //    {
+                //        Attack(collision.GetComponent<ICanGetDamage>());
+                //        // Debug.Log(gameObject.name + "<color=orange><b> ТАЧ </b></color>" + collision.name);
+                //    }
+                //}
+                //else
+                //{
+                //    if (damagedObject != null && !PlayerWeaponController.PlayerStateController.IsCurrentPlayerBodyPart(damagedObject))
+                //    {
+                //        Attack(collision.GetComponent<ICanGetDamage>());
+                //        // Debug.Log(gameObject.name + "<color=orange><b> ТАЧ </b></color>" + collision.name);
+                //    }
+                //}
 
             }
 

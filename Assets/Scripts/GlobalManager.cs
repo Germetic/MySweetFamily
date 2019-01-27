@@ -6,6 +6,8 @@ public class GlobalManager : MonoBehaviour
 {
     public static GlobalManager Instance;
 
+    public ScenesNumbers CurrentLocation = 0;
+
     public bool IsCountDownEnded = false;
     public bool IsScoreShowed = false;
 
@@ -39,6 +41,7 @@ public class GlobalManager : MonoBehaviour
     
 }
 
+[SerializeField]
 public enum ScenesNumbers
 {
     Menu = 0,

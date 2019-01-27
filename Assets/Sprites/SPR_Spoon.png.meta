@@ -1,0 +1,383 @@
+fileFormatVersion: 2
+guid: 0c060bf4cdded194fa97d24859c7bed8
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: SPR_Spoon_0
+    21300002: SPR_Spoon_1
+    21300004: SPR_Spoon_2
+    21300006: SPR_Spoon_3
+    21300008: SPR_Spoon_4
+    21300010: SPR_Spoon_5
+    21300012: SPR_Spoon_6
+    21300014: SPR_Spoon_7
+    21300016: SPR_Spoon_8
+    21300018: SPR_Spoon_9
+    21300020: SPR_Spoon_10
+    21300022: SPR_Spoon_11
+    21300024: SPR_Spoon_12
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SPR_Spoon_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 928
+        width: 685
+        height: 88
+      alignment: 9
+      pivot: {x: 0.122923024, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d3d59f2d9388f48876235e3b90e00b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 828
+        width: 881
+        height: 82
+      alignment: 9
+      pivot: {x: 0.09709274, y: 0.57729954}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d9153d660ff234ca5ae4af705ebee4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_2
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 727
+        width: 714
+        height: 85
+      alignment: 9
+      pivot: {x: 0.040585034, y: 0.462714}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef6b02d60b4b254f9c854808ee11251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_3
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 515
+        width: 81
+        height: 289
+      alignment: 9
+      pivot: {x: 0.4413083, y: 0.25325534}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22efcc9a4709e4a4dad15494b0917808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_4
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 519
+        width: 76
+        height: 277
+      alignment: 9
+      pivot: {x: 0.5625514, y: 0.25972816}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb0a993c6add6249bbeda07f8b14684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 516
+        width: 186
+        height: 189
+      alignment: 9
+      pivot: {x: 0.15921523, y: 0.12270262}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14a5ee89381b3e40a428bb0414e46d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_6
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 584
+        width: 166
+        height: 116
+      alignment: 9
+      pivot: {x: 0.099064656, y: 0.2541062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c61ca86eaa6a5844ae6e16afca2286e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_7
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 298
+        width: 198
+        height: 196
+      alignment: 9
+      pivot: {x: 0.22788863, y: 0.12000789}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7aa450e330c5584e8bc776ff54d7716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_8
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 12
+        width: 220
+        height: 297
+      alignment: 9
+      pivot: {x: 0.47839093, y: 0.06248774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6afa6e568c10d45b15913efe42ee78
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_9
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 10
+        width: 154
+        height: 470
+      alignment: 9
+      pivot: {x: 0.48970965, y: 0.94505024}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb101d2bb416c34fb5258dfd3ce3d2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_10
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 11
+        width: 122
+        height: 361
+      alignment: 9
+      pivot: {x: 0.5, y: 0.96090895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8addc3cb9ac34f428e9e153d2c512e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_11
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 12
+        width: 110
+        height: 236
+      alignment: 9
+      pivot: {x: 0.47118807, y: 0.09712326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953076d892a052d48bf8cd886681f261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SPR_Spoon_12
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 12
+        width: 136
+        height: 244
+      alignment: 9
+      pivot: {x: 0.48834813, y: 0.09734349}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5baf2de07c215468f4d4bd693c1c78
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: e17c7572cce44d241a98e4cd6c006115
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

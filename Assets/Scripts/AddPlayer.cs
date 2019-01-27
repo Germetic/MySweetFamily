@@ -162,7 +162,9 @@ public class AddPlayer : MonoBehaviour
     {
         if(IsPl1Ready && IsPl2Ready)
         {
-            SceneManager.LoadScene(1);
+            ScenesNumbers _scene = (ScenesNumbers)Random.Range((int)ScenesNumbers.Kitchen, (int)ScenesNumbers.Kitchen);
+            GlobalManager.Instance.CurrentLocation = _scene;
+            SceneManager.LoadScene((int)_scene);
         }
     }
 }
