@@ -56,16 +56,21 @@ public class SwordWeapon : Weapon
 
             if (PlayerWeaponController != null)
             {
-                    ICanGetDamage damagedObject = collision.GetComponent<ICanGetDamage>();
+                Debug.Log("<color=green><b> PLAYERCONTROLLER = !null </b></color>");
+                ICanGetDamage damagedObject = collision.GetComponent<ICanGetDamage>();
                 //КОСТЫЛЬ ГОДА
                 if (collision.gameObject.GetComponentInParent<PlayerController>() != null)
                     if (collision.gameObject.GetComponentInParent<PlayerController>().IsFirstPlayer != IsFirstPlayer)
-                        if (damagedObject != null && PlayerWeaponController.PlayerStateController.IsCurrentPlayerBodyPart(damagedObject))
+                        if (damagedObject != null && !PlayerWeaponController.PlayerStateController.IsCurrentPlayerBodyPart(damagedObject))
                         {
                             Attack(collision.GetComponent<ICanGetDamage>());
                             // Debug.Log(gameObject.name + "<color=orange><b> ТАЧ </b></color>" + collision.name);
                         }
-
+                        else
+                        {
+                            Debug.Log("<color=red><b> ISCUR = null </b></color>" + PlayerWeaponController.PlayerStateController.IsCurrentPlayerBodyPart(damagedObject));
+                            Debug.Log("<color=red><b> damagedObject = null </b></color>" + damagedObject);
+                        }
                 //if (ISKOSTULTOCHECKERBODYPART)
                 //{
                 //    if (damagedObject != null && PlayerWeaponController.PlayerStateController.IsCurrentPlayerBodyPart(damagedObject))
@@ -83,6 +88,10 @@ public class SwordWeapon : Weapon
                 //    }
                 //}
 
+            }
+            else
+            {
+                Debug.Log("<color=red><b> PLAYERCONTROLLER = null </b></color>");
             }
 
 

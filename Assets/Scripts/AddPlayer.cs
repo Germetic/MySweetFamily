@@ -79,7 +79,7 @@ public class AddPlayer : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown(KeyCode.Joystick1Button2))
+            if (Input.GetKeyDown(KeyCode.Joystick3Button2))
             {
                 SetPlayerReady(true);
             }
